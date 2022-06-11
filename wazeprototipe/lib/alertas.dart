@@ -31,14 +31,14 @@ class Alertas extends StatelessWidget {
               child: Row(
                 children: [
                   SizedBox(
-                    width: 60.0,
+                    width: 40.0,
                   ),
                   IconButton(
                       icon: Image.asset('assets/images/accidente.png'),
                       iconSize: 100,
                       onPressed: () {}),
                   SizedBox(
-                    width: 60.0,
+                    width: 30.0,
                   ),
                   IconButton(
                       icon: Image.asset('assets/images/policia.png'),
@@ -55,7 +55,7 @@ class Alertas extends StatelessWidget {
               child: Row(
                 children: [
                   SizedBox(
-                    width: 70.0,
+                    width: 50.0,
                   ),
                   Text(
                     'Accidente',
@@ -67,7 +67,7 @@ class Alertas extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    width: 110.0,
+                    width: 80.0,
                   ),
                   Text(
                     'Policia',
@@ -89,14 +89,14 @@ class Alertas extends StatelessWidget {
               child: Row(
                 children: [
                   SizedBox(
-                    width: 60.0,
+                    width: 40.0,
                   ),
                   IconButton(
                       icon: Image.asset('assets/images/congestion.png'),
                       iconSize: 100,
                       onPressed: () {}),
                   SizedBox(
-                    width: 60.0,
+                    width: 30.0,
                   ),
                   IconButton(
                       icon: Image.asset('assets/images/ladron.png'),
@@ -113,7 +113,7 @@ class Alertas extends StatelessWidget {
               child: Row(
                 children: [
                   SizedBox(
-                    width: 70.0,
+                    width: 50.0,
                   ),
                   Text(
                     'Congestión',
@@ -125,7 +125,7 @@ class Alertas extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    width: 100.0,
+                    width: 70.0,
                   ),
                   Text(
                     'Ladrón',
@@ -147,14 +147,14 @@ class Alertas extends StatelessWidget {
               child: Row(
                 children: [
                   SizedBox(
-                    width: 60.0,
+                    width: 40.0,
                   ),
                   IconButton(
                       icon: Image.asset('assets/images/advertencia.png'),
                       iconSize: 100,
                       onPressed: () {}),
                   SizedBox(
-                    width: 60.0,
+                    width: 30.0,
                   ),
                   IconButton(
                       icon: Image.asset('assets/images/clima.png'),
@@ -171,7 +171,7 @@ class Alertas extends StatelessWidget {
               child: Row(
                 children: [
                   SizedBox(
-                    width: 90.0,
+                    width: 70.0,
                   ),
                   Text(
                     'Peligro',
@@ -183,7 +183,7 @@ class Alertas extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    width: 120.0,
+                    width: 95.0,
                   ),
                   Text(
                     'Clima',
