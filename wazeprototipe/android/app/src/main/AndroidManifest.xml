@@ -4,8 +4,6 @@
         android:label="wazeprototipe"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
-        <meta-data android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyBwp_Uyd_NoFMkjKs0FkBY0sokcJowar0k"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"
