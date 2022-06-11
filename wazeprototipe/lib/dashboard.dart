@@ -24,7 +24,7 @@ class Dashboard extends StatelessWidget {
                 child: Row(
                   children: [
                     SizedBox(
-                      width: 80.0,
+                      width: 50.0,
                     ),
                     TextButton(
                       onPressed: () {
@@ -70,7 +70,7 @@ class Dashboard extends StatelessWidget {
                   child: Row(
                     children: [
                       SizedBox(
-                        width: 50.0,
+                        width: 30.0,
                       ),
                       Icon(
                         Icons.directions_bike_outlined,
@@ -96,11 +96,11 @@ class Dashboard extends StatelessWidget {
                     ],
                   )),
               SizedBox(
-                  height: 30.0,
+                  height: 20.0,
                   child: Row(
                     children: [
                       SizedBox(
-                        width: 50.0,
+                        width: 30.0,
                       ),
                       Text('0.0 Km',
                           style: TextStyle(
