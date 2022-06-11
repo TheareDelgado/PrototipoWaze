@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:wazeprototipe/login.dart';
 import 'package:wazeprototipe/dashboard.dart';
+import 'package:wazeprototipe/alertas.dart';
 
 // ignore: use_key_in_widget_constructors
 class Maps extends StatelessWidget {
@@ -178,19 +179,26 @@ class Maps extends StatelessWidget {
           ),
         ),
         resizeToAvoidBottomInset: false,
-        backgroundColor: Color.fromRGBO(225, 231, 255, 1), //Color de Fondo
+        //backgroundColor: Color.fromRGBO(225, 231, 255, 1), //Color de Fondo
 
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Image.asset(
-                'assets/images/maps.png',
-                //width: 482,
-                //height: 850,
-              ),
-            ],
-          ),
+        body: Container(
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage('assets/images/maps.png'),
+                  fit: BoxFit.fill)),
+          child: Align(
+              alignment: Alignment.bottomRight,
+              child: IconButton(
+                icon: Image.asset('assets/images/Alertas.png'),
+                iconSize: 90,
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              Alertas())); //Cambiar por alertas!!!!!!
+                },
+              )),
         ),
       ),
     );
