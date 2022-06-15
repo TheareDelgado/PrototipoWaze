@@ -1,3 +1,5 @@
+import 'package:custom_radio_grouped_button/custom_radio_grouped_button.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:wazeprototipe/maps.dart';
@@ -13,12 +15,12 @@ class Alertas extends StatelessWidget {
         resizeToAvoidBottomInset: false,
         backgroundColor: Color.fromRGBO(225, 231, 255, 1), //Color de Fondo
         appBar: AppBar(
-          backgroundColor: Color.fromRGBO(68, 70, 233, 1),
+          backgroundColor: Color.fromARGB(255, 21, 23, 112),
           automaticallyImplyLeading: false,
           leadingWidth: 100,
           leading: ElevatedButton.icon(
             onPressed: () => Navigator.of(context).pop(),
-            icon: const Icon(Icons.arrow_left_sharp),
+            icon: const Icon(Icons.arrow_back),
             label: const Text('Volver'),
             style: ElevatedButton.styleFrom(
                 elevation: 0, primary: Colors.transparent),
@@ -60,7 +62,7 @@ class Alertas extends StatelessWidget {
                   Text(
                     'Accidente',
                     style: TextStyle(
-                      color: Color.fromRGBO(68, 70, 233, 1),
+                      color: Color.fromARGB(255, 21, 23, 112),
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                       fontFamily: 'Impact',
@@ -72,7 +74,7 @@ class Alertas extends StatelessWidget {
                   Text(
                     'Policia',
                     style: TextStyle(
-                      color: Color.fromRGBO(68, 70, 233, 1),
+                      color: Color.fromARGB(255, 21, 23, 112),
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                       fontFamily: 'Impact',
@@ -94,7 +96,12 @@ class Alertas extends StatelessWidget {
                   IconButton(
                       icon: Image.asset('assets/images/congestion.png'),
                       iconSize: 100,
-                      onPressed: () {}),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => AlertaCongestion()));
+                      }),
                   SizedBox(
                     width: 30.0,
                   ),
@@ -118,7 +125,7 @@ class Alertas extends StatelessWidget {
                   Text(
                     'Congestión',
                     style: TextStyle(
-                      color: Color.fromRGBO(68, 70, 233, 1),
+                      color: Color.fromARGB(255, 21, 23, 112),
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                       fontFamily: 'Impact',
@@ -130,7 +137,7 @@ class Alertas extends StatelessWidget {
                   Text(
                     'Ladrón',
                     style: TextStyle(
-                      color: Color.fromRGBO(68, 70, 233, 1),
+                      color: Color.fromARGB(255, 21, 23, 112),
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                       fontFamily: 'Impact',
@@ -176,7 +183,7 @@ class Alertas extends StatelessWidget {
                   Text(
                     'Peligro',
                     style: TextStyle(
-                      color: Color.fromRGBO(68, 70, 233, 1),
+                      color: Color.fromARGB(255, 21, 23, 112),
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                       fontFamily: 'Impact',
@@ -188,7 +195,7 @@ class Alertas extends StatelessWidget {
                   Text(
                     'Clima',
                     style: TextStyle(
-                      color: Color.fromRGBO(68, 70, 233, 1),
+                      color: Color.fromARGB(255, 21, 23, 112),
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                       fontFamily: 'Impact',
@@ -201,6 +208,132 @@ class Alertas extends StatelessWidget {
               height: 35.0,
             ),
           ]),
+        ),
+      ),
+    );
+  }
+}
+
+class AlertaCongestion extends StatefulWidget {
+  static String id = 'AlertaCongestion';
+
+  @override
+  State<AlertaCongestion> createState() => _AlertaCongestionState();
+}
+
+class _AlertaCongestionState extends State<AlertaCongestion> {
+  @override
+  String radioButtonItem = 'Leve';
+  int id = 1;
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 21, 23, 112),
+        automaticallyImplyLeading: false,
+        leadingWidth: 100,
+        leading: ElevatedButton.icon(
+          onPressed: () => Navigator.of(context).pop(),
+          icon: const Icon(Icons.arrow_back),
+          label: const Text('Volver'),
+          style: ElevatedButton.styleFrom(
+              elevation: 0, primary: Colors.transparent),
+        ),
+        actions: [
+          IconButton(
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Maps()));
+              },
+              icon: Icon(Icons.close_outlined))
+        ],
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
+      backgroundColor: Color.fromRGBO(225, 231, 255, 1),
+      body: Container(
+        padding: EdgeInsets.all(20),
+        child: Column(
+          children: [
+            Image.asset(
+              'assets/images/congestion.png',
+            ),
+            Text(
+              "Congestión",
+              style: TextStyle(fontSize: 28),
+            ),
+            Divider(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Radio(
+                  value: 1,
+                  groupValue: id,
+                  onChanged: (val) {
+                    setState(() {
+                      radioButtonItem = 'Leve';
+                      id = 1;
+                    });
+                  },
+                ),
+                Text(
+                  'Leve',
+                  style: new TextStyle(fontSize: 17.0),
+                ),
+                Radio(
+                  value: 2,
+                  groupValue: id,
+                  onChanged: (val) {
+                    setState(() {
+                      radioButtonItem = 'Moderado';
+                      id = 2;
+                    });
+                  },
+                ),
+                Text(
+                  'Moderado',
+                  style: new TextStyle(
+                    fontSize: 17.0,
+                  ),
+                ),
+                Radio(
+                  value: 3,
+                  groupValue: id,
+                  onChanged: (val) {
+                    setState(() {
+                      radioButtonItem = 'Alto';
+                      id = 3;
+                    });
+                  },
+                ),
+                Text(
+                  'Alto',
+                  style: new TextStyle(fontSize: 17.0),
+                ),
+              ],
+            ),
+            Row(mainAxisAlignment: MainAxisAlignment.end, children: <Widget>[
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    primary: Color.fromARGB(255, 151, 152, 207)),
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Alertas()));
+                },
+                child: Text('Más tarde'),
+              ),
+              SizedBox(
+                width: 20,
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    primary: Color.fromARGB(255, 21, 23, 112)),
+                onPressed: () {
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => Maps()));
+                },
+                child: Text('Enviar'),
+              ),
+            ])
+          ],
         ),
       ),
     );

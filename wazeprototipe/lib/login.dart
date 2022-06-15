@@ -3,19 +3,6 @@
 
 // ignore_for_file: unused_import
 
-/*COSAS ÚTILES QUE SE PUEDEN OCUPAR PARA MÁS ADELANTE
-
-Text("¿Ya tienes una cuenta?",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Color.fromRGBO(135, 159, 245, 1),
-                fontSize: 15,
-              ))
-
-
-
-
-*/
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:wazeprototipe/maps.dart';

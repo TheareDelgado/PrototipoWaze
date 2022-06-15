@@ -23,19 +23,20 @@ class _MapsState extends State<Maps> {
     return SafeArea(
       child: Scaffold(
           bottomNavigationBar: BottomAppBar(
-            color: Color.fromRGBO(68, 70, 233, 1),
-            child: Row(
-              children: [
-                //TextField(),
-                IconButton(
-                    icon: Icon(
-                      Icons.search,
-                      color: Colors.white,
-                    ),
-                    onPressed: () {}),
-              ],
-            ),
-          ),
+              color: Color.fromARGB(255, 21, 23, 112),
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 40),
+                //alignment: Alignment.bottomCenter,
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: '¿A donde vas?',
+                    hintStyle: TextStyle(
+                        fontSize: 20.0,
+                        color: Color.fromARGB(103, 255, 255, 255)),
+                    prefixIcon: Icon(Icons.search, color: Colors.white),
+                  ),
+                ),
+              )),
           floatingActionButtonLocation:
               FloatingActionButtonLocation.centerDocked,
           drawer: Drawer(
@@ -45,7 +46,7 @@ class _MapsState extends State<Maps> {
               children: [
                 DrawerHeader(
                   decoration: BoxDecoration(
-                    color: Color.fromRGBO(68, 70, 233, 1),
+                    color: Color.fromARGB(255, 21, 23, 112),
                   ),
                   child: Column(children: [
                     Text(
@@ -117,7 +118,7 @@ class _MapsState extends State<Maps> {
                 ListTile(
                   leading: Icon(
                     Icons.bar_chart,
-                    color: Color.fromRGBO(68, 70, 233, 1),
+                    color: Color.fromARGB(255, 21, 23, 112),
                     size: 60,
                   ),
                   title: const Text(
@@ -144,7 +145,7 @@ class _MapsState extends State<Maps> {
                 ListTile(
                   leading: Icon(
                     Icons.help,
-                    color: Color.fromRGBO(68, 70, 233, 1),
+                    color: Color.fromARGB(255, 21, 23, 112),
                     size: 60,
                   ),
                   title: const Text(
@@ -166,7 +167,7 @@ class _MapsState extends State<Maps> {
                 ListTile(
                   leading: Icon(
                     Icons.exit_to_app,
-                    color: Color.fromRGBO(68, 70, 233, 1),
+                    color: Color.fromARGB(255, 21, 23, 112),
                     size: 60,
                   ),
                   title: const Text(
