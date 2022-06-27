@@ -1,7 +1,7 @@
-import 'package:custom_radio_grouped_button/custom_radio_grouped_button.dart';
-import 'package:flutter/cupertino.dart';
+// ignore_for_file: avoid_types_as_parameter_names
+
 import 'package:flutter/material.dart';
-import 'dart:async';
+
 import 'package:wazeprototipe/maps.dart';
 
 // ignore: use_key_in_widget_constructors
@@ -13,7 +13,7 @@ class Alertas extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
-        backgroundColor: Color.fromRGBO(225, 231, 255, 1), //Color de Fondo
+        backgroundColor: Colors.white, //Color de Fondo
         appBar: AppBar(
           backgroundColor: Color.fromARGB(255, 21, 23, 112),
           automaticallyImplyLeading: false,
@@ -31,181 +31,51 @@ class Alertas extends StatelessWidget {
           child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
             SizedBox(
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  _botonAccidente(),
                   SizedBox(
-                    width: 40.0,
+                    width: 50,
                   ),
-                  IconButton(
-                      icon: Image.asset('assets/images/accidente.png'),
-                      iconSize: 100,
-                      onPressed: () {}),
-                  SizedBox(
-                    width: 30.0,
-                  ),
-                  IconButton(
-                      icon: Image.asset('assets/images/policia.png'),
-                      iconSize: 100,
-                      onPressed: () {}),
-                  SizedBox(
-                    width: 50.0,
-                  ),
+                  _botonPolicia(),
                 ],
               ),
             ),
             SizedBox(
-              height: 20.0,
+              width: 50,
+              height: 50,
+            ),
+            SizedBox(
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  _botonCongestion(),
                   SizedBox(
-                    width: 50.0,
+                    width: 50,
                   ),
-                  Text(
-                    'Accidente',
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 21, 23, 112),
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Impact',
-                    ),
-                  ),
-                  SizedBox(
-                    width: 80.0,
-                  ),
-                  Text(
-                    'Policia',
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 21, 23, 112),
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Impact',
-                    ),
-                  ),
+                  _botonLadron(),
                 ],
               ),
             ),
             SizedBox(
-              height: 40.0,
+              width: 50,
+              height: 50,
             ),
             SizedBox(
-              //height: 15.0,
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  _botonAdvertencia(),
                   SizedBox(
-                    width: 40.0,
+                    width: 50,
                   ),
-                  IconButton(
-                      icon: Image.asset('assets/images/congestion.png'),
-                      iconSize: 100,
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => AlertaCongestion()));
-                      }),
-                  SizedBox(
-                    width: 30.0,
-                  ),
-                  IconButton(
-                      icon: Image.asset('assets/images/ladron.png'),
-                      iconSize: 100,
-                      onPressed: () {}),
-                  SizedBox(
-                    width: 50.0,
-                  ),
+                  _botonClima(),
                 ],
               ),
             ),
             SizedBox(
-              height: 20.0,
-              child: Row(
-                children: [
-                  SizedBox(
-                    width: 50.0,
-                  ),
-                  Text(
-                    'Congestión',
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 21, 23, 112),
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Impact',
-                    ),
-                  ),
-                  SizedBox(
-                    width: 70.0,
-                  ),
-                  Text(
-                    'Ladrón',
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 21, 23, 112),
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Impact',
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 40.0,
-            ),
-            SizedBox(
-              //height: 15.0,
-              child: Row(
-                children: [
-                  SizedBox(
-                    width: 40.0,
-                  ),
-                  IconButton(
-                      icon: Image.asset('assets/images/advertencia.png'),
-                      iconSize: 100,
-                      onPressed: () {}),
-                  SizedBox(
-                    width: 30.0,
-                  ),
-                  IconButton(
-                      icon: Image.asset('assets/images/clima.png'),
-                      iconSize: 100,
-                      onPressed: () {}),
-                  SizedBox(
-                    width: 50.0,
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 20.0,
-              child: Row(
-                children: [
-                  SizedBox(
-                    width: 70.0,
-                  ),
-                  Text(
-                    'Peligro',
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 21, 23, 112),
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Impact',
-                    ),
-                  ),
-                  SizedBox(
-                    width: 95.0,
-                  ),
-                  Text(
-                    'Clima',
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 21, 23, 112),
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Impact',
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 35.0,
+              width: 20,
+              height: 20,
             ),
           ]),
         ),
@@ -214,128 +84,527 @@ class Alertas extends StatelessWidget {
   }
 }
 
-class AlertaCongestion extends StatefulWidget {
-  static String id = 'AlertaCongestion';
-
-  @override
-  State<AlertaCongestion> createState() => _AlertaCongestionState();
+Widget _congLeve() {
+  return _Alerta(
+    ruta: 'assets/images/congLeve.png',
+    nombre: 'Moderado',
+    altura: 70,
+    ancho: 70,
+  );
 }
 
-class _AlertaCongestionState extends State<AlertaCongestion> {
+Widget _congModerada() {
+  return _Alerta(
+      ruta: 'assets/images/congModerado.png',
+      nombre: 'Pesado',
+      altura: 70,
+      ancho: 70);
+}
+
+Widget _congAlta() {
+  return _Alerta(
+      ruta: 'assets/images/congAlta.png',
+      nombre: 'Alto Total',
+      altura: 70,
+      ancho: 70);
+}
+
+Widget _Clima1() {
+  return _Alerta(
+      ruta: 'assets/images/lluvia.png',
+      nombre: 'Lluvia',
+      altura: 70,
+      ancho: 70);
+}
+
+Widget _Clima2() {
+  return _Alerta(
+      ruta: 'assets/images/nieve.png', nombre: 'Nieve', altura: 70, ancho: 70);
+}
+
+Widget _Clima3() {
+  return _Alerta(
+      ruta: 'assets/images/viento.png',
+      nombre: 'Viento',
+      altura: 70,
+      ancho: 70);
+}
+
+Widget _Advertencia1() {
+  return _Alerta(
+      ruta: 'assets/images/bicicleta.png',
+      nombre: 'Fin Ciclovías',
+      altura: 70,
+      ancho: 70);
+}
+
+Widget _Advertencia2() {
+  return _Alerta(
+      ruta: 'assets/images/simbolo-menos.png',
+      nombre: 'Mal Estado',
+      altura: 70,
+      ancho: 70);
+}
+
+Widget _Accidente1() {
+  return _Alerta(
+      ruta: 'assets/images/accidenteLeve.png',
+      nombre: 'Leve',
+      altura: 70,
+      ancho: 70);
+}
+
+Widget _Accidente2() {
+  return _Alerta(
+      ruta: 'assets/images/accidenteGrave.png',
+      nombre: 'Grave',
+      altura: 70,
+      ancho: 70);
+}
+
+Widget _botonAccidente() {
+  return _BotonAlerta(
+    nombre: 'Accidente',
+    ruta: 'assets/images/accidente.png',
+    dialog: _dAccidente(),
+  );
+}
+
+Widget _botonPolicia() {
+  return _BotonAlerta(
+    nombre: 'Policia',
+    ruta: 'assets/images/policia.png',
+    dialog: _dPolicia(),
+  );
+}
+
+Widget _botonCongestion() {
+  return _BotonAlerta(
+    nombre: 'Congestion',
+    ruta: 'assets/images/embotellamiento.png',
+    dialog: _dCongestion(),
+  );
+}
+
+Widget _botonAdvertencia() {
+  return _BotonAlerta(
+    nombre: 'Advertencia',
+    ruta: 'assets/images/advertencia.png',
+    dialog: _dAdvertencia(),
+  );
+}
+
+Widget _botonLadron() {
+  return _BotonAlerta(
+    nombre: 'Ladrón',
+    ruta: 'assets/images/bandido.png',
+    dialog: _dLadron(),
+  );
+}
+
+Widget _botonClima() {
+  return _BotonAlerta(
+    nombre: 'Clima',
+    ruta: 'assets/images/clima.png',
+    dialog: _dClima(),
+  );
+}
+
+class _Alerta extends StatelessWidget {
+  final String ruta;
+  final String nombre;
+  final double altura;
+  final double ancho;
+  //final Widget dialog;
+
+  const _Alerta({
+    required this.ruta,
+    required this.nombre,
+    this.altura = 100,
+    this.ancho = 100,
+    //required this.dialog
+  });
   @override
-  String radioButtonItem = 'Leve';
-  int id = 1;
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 21, 23, 112),
-        automaticallyImplyLeading: false,
-        leadingWidth: 100,
-        leading: ElevatedButton.icon(
-          onPressed: () => Navigator.of(context).pop(),
-          icon: const Icon(Icons.arrow_back),
-          label: const Text('Volver'),
-          style: ElevatedButton.styleFrom(
-              elevation: 0, primary: Colors.transparent),
-        ),
-        actions: [
-          IconButton(
-              onPressed: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => Maps()));
-              },
-              icon: Icon(Icons.close_outlined))
-        ],
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
-      backgroundColor: Color.fromRGBO(225, 231, 255, 1),
-      body: Container(
-        padding: EdgeInsets.all(20),
+    return Container(
+        child: Material(
+      child: InkWell(
+        splashColor: Colors.white,
+        onTap: () {},
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
-            Image.asset(
-              'assets/images/congestion.png',
+            Ink.image(
+              image: AssetImage(ruta),
+              height: altura,
+              width: ancho,
+              fit: BoxFit.cover,
+            ),
+            SizedBox(
+              height: 6,
             ),
             Text(
-              "Congestión",
-              style: TextStyle(fontSize: 28),
-            ),
-            Divider(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Radio(
-                  value: 1,
-                  groupValue: id,
-                  onChanged: (val) {
-                    setState(() {
-                      radioButtonItem = 'Leve';
-                      id = 1;
-                    });
-                  },
-                ),
-                Text(
-                  'Leve',
-                  style: new TextStyle(fontSize: 17.0),
-                ),
-                Radio(
-                  value: 2,
-                  groupValue: id,
-                  onChanged: (val) {
-                    setState(() {
-                      radioButtonItem = 'Moderado';
-                      id = 2;
-                    });
-                  },
-                ),
-                Text(
-                  'Moderado',
-                  style: new TextStyle(
-                    fontSize: 17.0,
-                  ),
-                ),
-                Radio(
-                  value: 3,
-                  groupValue: id,
-                  onChanged: (val) {
-                    setState(() {
-                      radioButtonItem = 'Alto';
-                      id = 3;
-                    });
-                  },
-                ),
-                Text(
-                  'Alto',
-                  style: new TextStyle(fontSize: 17.0),
-                ),
-              ],
-            ),
-            Row(mainAxisAlignment: MainAxisAlignment.end, children: <Widget>[
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    primary: Color.fromARGB(255, 151, 152, 207)),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Alertas()));
-                },
-                child: Text('Más tarde'),
-              ),
-              SizedBox(
-                width: 20,
-              ),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    primary: Color.fromARGB(255, 21, 23, 112)),
-                onPressed: () {
-                  Navigator.push(
-                      context, MaterialPageRoute(builder: (context) => Maps()));
-                },
-                child: Text('Enviar'),
-              ),
-            ])
+              nombre,
+              style: (TextStyle(
+                  color: Colors.black87,
+                  fontSize: 17,
+                  fontWeight: FontWeight.bold)),
+            )
           ],
         ),
       ),
+    ));
+  }
+}
+
+class _BotonAlerta extends StatelessWidget {
+  final String ruta;
+  final String nombre;
+  final double altura;
+  final double ancho;
+  final Widget dialog;
+  //final Widget dialog;
+
+  const _BotonAlerta(
+      {required this.ruta,
+      required this.nombre,
+      this.altura = 100,
+      this.ancho = 100,
+      required this.dialog});
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        child: Material(
+      child: InkWell(
+        splashColor: Colors.white,
+        onTap: () {
+          showDialog(
+              context: context,
+              builder: (context) {
+                return dialog;
+              });
+        },
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Ink.image(
+              image: AssetImage(ruta),
+              height: altura,
+              width: ancho,
+              fit: BoxFit.cover,
+            ),
+            SizedBox(
+              height: 6,
+            ),
+            Text(
+              nombre,
+              style: (TextStyle(
+                  color: Colors.black87,
+                  fontSize: 17,
+                  fontWeight: FontWeight.bold)),
+            )
+          ],
+        ),
+      ),
+    ));
+  }
+}
+
+Widget _dAdvertencia() {
+  return _Dialogs2(
+    nombre: 'Advertencia',
+    ruta: 'assets/images/advertencia.png',
+    w1: _Advertencia1(),
+    w2: _Advertencia2(),
+  );
+}
+
+Widget _dAccidente() {
+  return _Dialogs2(
+    nombre: 'Accidente',
+    ruta: 'assets/images/accidente.png',
+    w1: _Accidente1(),
+    w2: _Accidente2(),
+  );
+}
+
+Widget _dCongestion() {
+  return _Dialogs(
+    nombre: 'Congestión',
+    ruta: 'assets/images/embotellamiento.png',
+    w1: _congLeve(),
+    w2: _congModerada(),
+    w3: _congAlta(),
+  );
+}
+
+Widget _dClima() {
+  return _Dialogs(
+    nombre: 'Clima',
+    ruta: 'assets/images/clima.png',
+    w1: _Clima1(),
+    w2: _Clima2(),
+    w3: _Clima3(),
+  );
+}
+
+Widget _dPolicia() {
+  return _Dialogs3(
+    nombre: 'Policia',
+    ruta: 'assets/images/policia.png',
+  );
+}
+
+Widget _dLadron() {
+  return _Dialogs3(
+    nombre: 'Ladrón',
+    ruta: 'assets/images/bandido.png',
+  );
+}
+
+class _Dialogs extends StatelessWidget {
+  final String ruta;
+  final String nombre;
+  final Widget w1, w2, w3;
+
+  //final Function function;
+  const _Dialogs({
+    required this.ruta,
+    required this.nombre,
+    required this.w1,
+    required this.w2,
+    required this.w3,
+
+    //required this.function
+  });
+  @override
+  Widget build(BuildContext context) {
+    return Dialog(
+      child: Container(
+          height: 450,
+          child: Column(
+            children: [
+              SizedBox(
+                child: Row(children: [
+                  ElevatedButton.icon(
+                    onPressed: () => Navigator.of(context).pop(),
+                    icon: const Icon(Icons.arrow_back,
+                        color: Color.fromARGB(255, 21, 23, 112)),
+                    label: const Text(''),
+                    style: ElevatedButton.styleFrom(
+                        elevation: 0, primary: Colors.transparent),
+                  ),
+                ]),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Image.asset(
+                ruta,
+                width: 150,
+                height: 150,
+              ),
+              Text(
+                nombre,
+                style: (TextStyle(
+                    color: Colors.black87,
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold)),
+              ),
+              Divider(),
+              SizedBox(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    w1,
+                    SizedBox(
+                      width: 20,
+                    ),
+                    w2,
+                    SizedBox(
+                      width: 20,
+                    ),
+                    w3
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              SizedBox(
+                child: Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        primary: Color.fromARGB(255, 21, 23, 112)),
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Maps()));
+                    },
+                    child: Text('Enviar'),
+                  ),
+                  SizedBox(
+                    width: 40,
+                  )
+                ]),
+              )
+            ],
+          )),
+    );
+  }
+}
+
+class _Dialogs2 extends StatelessWidget {
+  final String ruta;
+  final String nombre;
+  final Widget w1, w2;
+
+  //final Function function;
+  const _Dialogs2({
+    required this.ruta,
+    required this.nombre,
+    required this.w1,
+    required this.w2,
+
+    //required this.function
+  });
+  @override
+  Widget build(BuildContext context) {
+    return Dialog(
+      child: Container(
+          height: 450,
+          child: Column(
+            children: [
+              SizedBox(
+                child: Row(children: [
+                  ElevatedButton.icon(
+                    onPressed: () => Navigator.of(context).pop(),
+                    icon: const Icon(Icons.arrow_back,
+                        color: Color.fromARGB(255, 21, 23, 112)),
+                    label: const Text(''),
+                    style: ElevatedButton.styleFrom(
+                        elevation: 0, primary: Colors.transparent),
+                  ),
+                ]),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Image.asset(
+                ruta,
+                width: 150,
+                height: 150,
+              ),
+              Text(
+                nombre,
+                style: (TextStyle(
+                    color: Colors.black87,
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold)),
+              ),
+              Divider(),
+              SizedBox(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    w1,
+                    SizedBox(
+                      width: 30,
+                    ),
+                    w2
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              SizedBox(
+                child: Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        primary: Color.fromARGB(255, 21, 23, 112)),
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Maps()));
+                    },
+                    child: Text('Enviar'),
+                  ),
+                  SizedBox(
+                    width: 40,
+                  )
+                ]),
+              )
+            ],
+          )),
+    );
+  }
+}
+
+class _Dialogs3 extends StatelessWidget {
+  final String ruta;
+  final String nombre;
+
+  //final Function function;
+  const _Dialogs3({
+    required this.ruta,
+    required this.nombre,
+    //required this.function
+  });
+  @override
+  Widget build(BuildContext context) {
+    return Dialog(
+      child: Container(
+          height: 400,
+          child: Column(
+            children: [
+              SizedBox(
+                child: Row(children: [
+                  ElevatedButton.icon(
+                    onPressed: () => Navigator.of(context).pop(),
+                    icon: const Icon(Icons.arrow_back,
+                        color: Color.fromARGB(255, 21, 23, 112)),
+                    label: const Text(''),
+                    style: ElevatedButton.styleFrom(
+                        elevation: 0, primary: Colors.transparent),
+                  ),
+                ]),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Image.asset(
+                ruta,
+                width: 150,
+                height: 150,
+              ),
+              Text(
+                nombre,
+                style: (TextStyle(
+                    color: Colors.black87,
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold)),
+              ),
+              Divider(),
+              SizedBox(
+                height: 30,
+              ),
+              SizedBox(
+                child: Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        primary: Color.fromARGB(255, 21, 23, 112)),
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Maps()));
+                    },
+                    child: Text('Enviar'),
+                  ),
+                  SizedBox(
+                    width: 40,
+                  )
+                ]),
+              )
+            ],
+          )),
     );
   }
 }

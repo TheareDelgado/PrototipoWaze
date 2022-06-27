@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
 import 'package:wazeprototipe/login.dart';
 import 'package:wazeprototipe/dashboard.dart';
 import 'package:wazeprototipe/alertas.dart';
@@ -8,6 +7,7 @@ import "package:google_maps_flutter/google_maps_flutter.dart";
 // ignore: use_key_in_widget_constructors
 class Maps extends StatefulWidget {
   static String id = 'maps';
+
   static final LatLng _kMapCenter =
       LatLng(19.018255973653343, 72.84793849278007);
 
@@ -18,24 +18,33 @@ class Maps extends StatefulWidget {
 }
 
 class _MapsState extends State<Maps> {
+  GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+          key: _scaffoldKey,
           bottomNavigationBar: BottomAppBar(
-              color: Color.fromARGB(255, 21, 23, 112),
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 40),
-                //alignment: Alignment.bottomCenter,
-                child: TextField(
-                  decoration: InputDecoration(
-                    hintText: '¿A donde vas?',
-                    hintStyle: TextStyle(
-                        fontSize: 20.0,
-                        color: Color.fromARGB(103, 255, 255, 255)),
-                    prefixIcon: Icon(Icons.search, color: Colors.white),
-                  ),
-                ),
+              color: Colors.white70,
+              child: Row(
+                children: [
+                  IconButton(
+                      onPressed: () {
+                        _scaffoldKey.currentState?.openDrawer();
+                      },
+                      icon: Icon(
+                        Icons.menu,
+                        color: Color.fromRGBO(5, 16, 58, 1),
+                      )),
+                  SizedBox(width: 50),
+                  SizedBox(
+                      width: 200,
+                      child: Container(
+                          child: TextField(
+                              decoration: InputDecoration(
+                                  prefixIcon: Icon(Icons.search),
+                                  hintText: '¿A donde vas?'))))
+                ],
               )),
           floatingActionButtonLocation:
               FloatingActionButtonLocation.centerDocked,
@@ -46,7 +55,7 @@ class _MapsState extends State<Maps> {
               children: [
                 DrawerHeader(
                   decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 21, 23, 112),
+                    color: Color.fromRGBO(5, 16, 58, 1),
                   ),
                   child: Column(children: [
                     Text(
@@ -118,7 +127,7 @@ class _MapsState extends State<Maps> {
                 ListTile(
                   leading: Icon(
                     Icons.bar_chart,
-                    color: Color.fromARGB(255, 21, 23, 112),
+                    color: Color.fromRGBO(5, 16, 58, 1),
                     size: 60,
                   ),
                   title: const Text(
@@ -144,30 +153,8 @@ class _MapsState extends State<Maps> {
                 ),
                 ListTile(
                   leading: Icon(
-                    Icons.help,
-                    color: Color.fromARGB(255, 21, 23, 112),
-                    size: 60,
-                  ),
-                  title: const Text(
-                    'Consejos',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 18,
-                      fontFamily: 'Impact',
-                    ),
-                  ),
-                  onTap: () {
-                    // Update the state of the app.
-                    // ...
-                  },
-                ),
-                SizedBox(
-                  height: 30.0,
-                ),
-                ListTile(
-                  leading: Icon(
                     Icons.exit_to_app,
-                    color: Color.fromARGB(255, 21, 23, 112),
+                    color: Color.fromRGBO(5, 16, 58, 1),
                     size: 60,
                   ),
                   title: const Text(
@@ -194,6 +181,11 @@ class _MapsState extends State<Maps> {
           body: Stack(
             children: <Widget>[
               GoogleMap(
+                myLocationButtonEnabled: true,
+                myLocationEnabled: true,
+                mapType: MapType.normal,
+                trafficEnabled: true,
+                zoomControlsEnabled: false,
                 initialCameraPosition: CameraPosition(
                     target: LatLng(-33.45251672253850, -70.65105506131032),
                     zoom: 17.0,
@@ -212,7 +204,6 @@ class _MapsState extends State<Maps> {
                     onPressed: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => Alertas()));
-                      //do something on press
                     },
                   )),
             ],

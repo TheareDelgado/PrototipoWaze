@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wazeprototipe/alertas.dart';
 import 'package:wazeprototipe/login.dart';
 
 void main() {

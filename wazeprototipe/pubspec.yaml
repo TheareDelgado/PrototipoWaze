@@ -34,6 +34,7 @@ dependencies:
   http: ^0.13.4
   json_serializable: ^6.2.0
   custom_radio_grouped_button: any
+  location: ^4.4.0
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -64,15 +65,28 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-  - assets/images/20945495.png
-  - assets/images/maps.png
-  - assets/images/Alertas.png
-  - assets/images/accidente.png
-  - assets/images/advertencia.png
-  - assets/images/clima.png
-  - assets/images/congestion.png
-  - assets/images/ladron.png
-  - assets/images/policia.png
+      - assets/
+      - assets/images/
+      - assets/images/20945495.png
+      - assets/images/maps.png
+      - assets/images/Alertas.png
+      - assets/images/accidente.png
+      - assets/images/advertencia.png
+      - assets/images/clima.png
+      - assets/images/congestion.png
+      - assets/images/ladron.png
+      - assets/images/policia.png
+      - assets/images/embotellamiento.png
+      - assets/images/congLeve.png
+      - assets/images/congModerado.png
+      - assets/images/congAlta.png
+      - assets/images/bandido.png
+      - assets/images/lluvia.png
+      - assets/images/nieve.png
+      - assets/images/viento.png
+      - assets/images/simbolo-menos.png
+      - assets/images/bicicleta.png
+
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
