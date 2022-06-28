@@ -1,0 +1,48 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "google_maps_in_flutter",
+            "cwd": "google_maps_in_flutter",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "google_maps_in_flutter (profile mode)",
+            "cwd": "google_maps_in_flutter",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "google_maps_in_flutter (release mode)",
+            "cwd": "google_maps_in_flutter",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "wazeprototipe",
+            "cwd": "wazeprototipe",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "wazeprototipe (profile mode)",
+            "cwd": "wazeprototipe",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "wazeprototipe (release mode)",
+            "cwd": "wazeprototipe",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}

@@ -28,7 +28,6 @@ class Dashboard extends StatelessWidget {
                     ),
                     TextButton(
                       onPressed: () {
-                        // Respond to button press
                       },
                       child: Text("Día    /",
                           style: TextStyle(
