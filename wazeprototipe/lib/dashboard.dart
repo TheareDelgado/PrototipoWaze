@@ -1,11 +1,22 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
 import 'package:wazeprototipe/login.dart';
 import 'package:wazeprototipe/maps.dart';
 import 'dart:math';
 
-class Dashboard extends StatelessWidget {
+String imageLink = 'assets/images/dia.jpeg';
+
+class Dashboard extends StatefulWidget {
   static String id = 'dashboard';
+  @override
+  State<Dashboard> createState() => _DashboardState();
+}
+
+class _DashboardState extends State<Dashboard> {
+  onButtonPressed(String value) {
+    setState(() {
+      imageLink = value;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +39,7 @@ class Dashboard extends StatelessWidget {
                     ),
                     TextButton(
                       onPressed: () {
+                        onButtonPressed('assets/images/dia.jpeg');
                       },
                       child: Text("Día    /",
                           style: TextStyle(
@@ -38,7 +50,7 @@ class Dashboard extends StatelessWidget {
                     ),
                     TextButton(
                       onPressed: () {
-                        // Respond to button press
+                        onButtonPressed('assets/images/mes.jpeg');
                       },
                       child: Text("     Mes    /",
                           style: TextStyle(
@@ -49,7 +61,7 @@ class Dashboard extends StatelessWidget {
                     ),
                     TextButton(
                       onPressed: () {
-                        // Respond to button press
+                        onButtonPressed('assets/images/año.jpeg');
                       },
                       child: Text("   Año",
                           style: TextStyle(
@@ -62,7 +74,12 @@ class Dashboard extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 380.0,
+                height: 10.0,
+              ),
+              Image.asset(
+                imageLink,
+                width: 350,
+                height: 350,
               ),
               SizedBox(
                   height: 70.0,
